@@ -17,7 +17,8 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-vim ~/.zshrc
+# set zsh as default shell
+chsh -s $(which zsh)
 ```
 
 2. Modify the defualt theme and add the plugin (inside ~/.zshrc):
@@ -29,6 +30,7 @@ plugins=(
     zsh-autosuggestions
 )
 ```
+
 
 ### Conda 
 
@@ -46,9 +48,6 @@ conda create -n ${ENV_NAME}
 
 # remove envs
 conda remove -n ${ENV_NAME}
-
-# set zsh as default shell
-chsh -s $(which zsh)
 ```
 
 ### Qinghua Mirror
