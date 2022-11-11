@@ -46,6 +46,9 @@ conda create -n ${ENV_NAME}
 
 # remove envs
 conda remove -n ${ENV_NAME}
+
+# set zsh as default shell
+chsh -s $(which zsh)
 ```
 
 ### Qinghua Mirror
