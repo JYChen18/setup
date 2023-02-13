@@ -97,6 +97,11 @@ pip install torch-1.9.1+cu111-cp38-cp38-linux_x86_64.whl
 
 ```
 
+### Git
 
+```
+git config --global user.email jiayichen@pku.edu.cn
+git config --global user.name JYChen18
+```
 
 
