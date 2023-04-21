@@ -80,7 +80,11 @@ quick-links: [pytorch](https://pytorch.org/get-started/previous-versions/)
 
 NOTE: If you are using Qinghua Mirror through pip to install pytorch, the default version of torch is CUDA10.2. It may have problem to run on machine with CUDA 11.0+ !
 
-NOTE: If you are using Qinghua Mirror through conda to install pytorch, remove '-c pytorch'. (It may fail...)
+NOTE: If you are using Qinghua Mirror through conda to install pytorch, remove '-c pytorch'. (But it may fail to find the suitable version)
+
+Simplest way:
+
+1. Move to [pytorch_all_versions](https://pytorch.org/get-started/previous-versions/) and choose the suitable link to run. But it may be very slow.
 
 Recommended way: 
 
@@ -105,3 +109,25 @@ git config --global user.name JYChen18
 ```
 
 
+### Clash
+
+quick links: [Tutorial](https://segmentfault.com/a/1190000041862051), [clash](https://github.com/Dreamacro/clash/releases/)
+
+```
+# download 
+wget https://github.com/Dreamacro/clash/releases/download/v1.15.1/clash-linux-amd64-v1.15.1.gz
+wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
+wget -O config.yaml [代理商提供的订阅链接]
+
+# run
+sudo chmod +x clash-linux-amd64-v1.15.1
+./clash-linux-amd64-v1.15.1.  # here may should add "-d ."
+
+# set proxy for the system. Another way is to change the "network proxy" in "settings" by UI.
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+
+# cancel proxy
+unset https_proxy
+unset http_proxy
+unset all_proxy
+```
