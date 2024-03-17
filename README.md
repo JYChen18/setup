@@ -1,7 +1,12 @@
 # Intro
 This repo records some steps to initialize my faviorate work environment (including oh-my-zsh, conda, pytorch) on a new Ubuntu machine.
 
+### Commonly used commands
 
+```
+df -h          # see the memory usage of each disk
+du -d 1 -h     # see the memory usage of a folder
+```
 
 ### Clash
 
