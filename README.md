@@ -137,6 +137,20 @@ pip install torch-1.9.1+cu111-cp38-cp38-linux_x86_64.whl
 
 ### Git
 
+To connect to github, first run 
+```
+ssh-keygen
+```
+to generate keys. Then put the public key to -> Settings -> SSH and GPG keys
+
+Then, write the following lines to `~/.ssh/config`
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+```
+Now you can pull codes. To push codes, you also need 
 ```
 git config --global user.email {$YOUR_EMAIL}
 git config --global user.name {$YOUR_NAME}
