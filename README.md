@@ -8,18 +8,20 @@ quick-links: [oh-my-zsh](https://ohmyz.sh/#install), [zsh-autosuggestions](https
 
 1. Install
 ```
-# install zsh
-sudo apt-get install zsh
-
 # install oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# set zsh as default shell
-chsh -s $(which zsh)
 ```
+
+To use zsh as the default one, add the following two lines to `~/.bash_profile` and reconnect the server.
+
+```
+export SHELL=`which zsh`
+[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
+```
+
 
 2. Modify the defualt theme and add the plugin (inside ~/.zshrc):
 ```
@@ -42,13 +44,17 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh
 
 # Install 
 sh Miniconda3-py38_4.12.0-Linux-x86_64.sh
+```
 
+To create and remove environments,
+```
 # create new envs
 conda create -n ${ENV_NAME}
 
 # remove envs
 conda remove -n ${ENV_NAME}
 ```
+
 
 ### Qinghua Mirror
 
