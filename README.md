@@ -1,5 +1,5 @@
 # Intro
-This repo records some steps to initialize my faviorate work environment (including oh-my-zsh, conda, pytorch) on a new Ubuntu machine.
+This repo records some steps to initialize my faviorate work environment (including oh-my-zsh, conda, pytorch) on a new Ubuntu machine. There are some other guidances at https://pengsida.notion.site/59569d7b66954578b21bf1dc6ea35776.
 
 ### Commonly used commands
 
