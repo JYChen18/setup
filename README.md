@@ -1,20 +1,28 @@
 # Intro
-This repo records some steps to initialize my faviorate work environment (including oh-my-zsh, conda, pytorch) on a new Ubuntu machine. There are some other guidances at https://pengsida.notion.site/59569d7b66954578b21bf1dc6ea35776.
+This repo records some steps to initialize my faviorate work environment (including oh-my-zsh, conda, pytorch) on a new Ubuntu machine. There are some other guidance at https://pengsida.notion.site/59569d7b66954578b21bf1dc6ea35776.
 
 ### Commonly used commands
 
 ```
 df -h          # see the memory usage of each disk
 du -d 1 -h     # see the memory usage of a folder
+nvidia-smi     # GPU utility
+top            # CPU utility
+nvitop        # GPU utility. But it need to install https://github.com/XuehaiPan/nvitop
 ```
 
 ### Clash
 
-quick links: [Tutorial](https://segmentfault.com/a/1190000041862051), [clash](https://github.com/Dreamacro/clash/releases/)
+The online link is not supported anymore. 
+If we are on the same server, you can directly use mine with
+```
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+```
 
+Alternatively, ask me for the ZIP file and build it yourself. 
 ```
 # download
-unzip Clash.zip    # online link is not supported anymore. Use our zip file.
+unzip Clash.zip    
 wget -O config.yaml [代理商提供的订阅链接]    # your vpn config
 
 # run
@@ -51,7 +59,7 @@ export SHELL=`which zsh`
 ```
 
 
-2. Modify the defualt theme and add the plugin (inside ~/.zshrc):
+2. Modify the default theme and add the plugin (inside ~/.zshrc):
 ```
 ZSH_THEME="flazz"
 
@@ -68,10 +76,10 @@ quick-links: [miniconda](https://docs.conda.io/en/latest/miniconda.html), [Anaco
 
 ```
 # Download Miniconda (Linux, python 3.8)
-wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-py310_25.1.1-2-Linux-x86_64.sh
 
 # Install 
-sh Miniconda3-py38_4.12.0-Linux-x86_64.sh
+sh Miniconda3-py310_25.1.1-2-Linux-x86_64.sh
 ```
 
 To create and remove environments,
@@ -84,7 +92,9 @@ conda remove -n ${ENV_NAME}
 ```
 
 
-### Qinghua Mirror
+### Qinghua Mirror (Deprecated)
+
+NOTE: If using clash, no need to do the following things!
 
 Quick-links: [pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
 
@@ -108,32 +118,12 @@ conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/clo
 ```
 
 
-### pytorch
+### PyTorch
 
 quick-links: [pytorch](https://pytorch.org/get-started/previous-versions/)
 
-NOTE: If you are using Qinghua Mirror through pip to install pytorch, the default version of torch is CUDA10.2. It may have problem to run on machine with CUDA 11.0+ !
+Recommended way: Use Clash and move to [pytorch_all_versions](https://pytorch.org/get-started/previous-versions/) and choose the suitable link to run. 
 
-NOTE: If you are using Qinghua Mirror through conda to install pytorch, remove '-c pytorch'. (But it may fail to find the suitable version)
-
-Recommended way:
-
-1. Use Clash and move to [pytorch_all_versions](https://pytorch.org/get-started/previous-versions/) and choose the suitable link to run. 
-
-Another possible way: 
-
-1. Choose suitable version and download .whl file from [here](https://download.pytorch.org/whl/torch_stable.html)
-
-2. Directly install from .whl file
-
-```
-# stable version 1.9.1+cu111 (Linux, python 3.8)
-wget https://download.pytorch.org/whl/cu111/torch-1.9.1%2Bcu111-cp38-cp38-linux_x86_64.whl
-
-# install from .whl file
-pip install torch-1.9.1+cu111-cp38-cp38-linux_x86_64.whl
-
-```
 
 ### Git
 
